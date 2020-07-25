@@ -4,8 +4,8 @@ const crypto = require('crypto')
 const User = require('../models/user')
 
 passport.use(new googleStrategy({
-    clientID:"1016643530275-n8pbga5vmpkr3rcpnvcsnqb4ltjhbavh.apps.googleusercontent.com",
-    clientSecret:"7BHnXm11Z3MnIF7-foC2Ffw2",
+    clientID: `${process.env.CLIENT_ID}`,
+    clientSecret: `${process.env.CLIENT_SECRET}`,
     callbackURL: "http://localhost:8800/users/auth/google/callback"
   },
   function(accessToken, refreshToken, profile,done){
@@ -14,9 +14,6 @@ passport.use(new googleStrategy({
         console.log('Error in google strategy passport', err)
         return
       }
-      console.log(accessToken)
-      console.log(refreshToken)
-      console.log(profile)
       if(user){
         //if found, set the user found in the DB as the google details
         return done(null, user)

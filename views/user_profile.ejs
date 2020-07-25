@@ -1,12 +1,13 @@
 <div class="text-center">
-
-  <% if (locals.user) {%>
-    <li>Hi, <%=  user.name %> </a></li>
-    <li><a href="/users/sign-out">Sign Out</a> </li>
-  <% }else{ %>
-    <li><a href="/users/sign-in">Sign In</a></li>
-    <li><a href="/users/sign-up">Sign Up</a></li>
-  <% } %>
+  <ul>
+    <% if (locals.user) {%>
+      <li>Hi, <%=  user.name %> </a></li>
+      <li><a href="/users/sign-out">Sign Out</a> </li>
+    <% }else{ %>
+      <li><a href="/users/sign-in">Sign In</a></li>
+      <li><a href="/users/sign-up">Sign Up</a></li>
+    <% } %>
+  </ul>
 
   <h1>User Profile</h1>
   <%= profile_user.name %>
