@@ -50,11 +50,17 @@ module.exports.createSession = async function(req,res){
 
 
 module.exports.signIn = (req,res)=>{
-  res.render('sign_in')
+  if(req.isAuthenticated()){
+    return res.redirect(`/users/profile/${req.user.id}`)
+  }
+  return res.render('sign_in')
 }
 
 module.exports.signUp = (req,res)=>{
-  res.render('sign_up')
+  if(req.isAuthenticated()){
+    return res.redirect(`/users/profile/${req.user.id}`)
+  }
+  return res.render('sign_up')
 }
 
 module.exports.signOut = function(req,res){
