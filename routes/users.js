@@ -10,8 +10,17 @@ router.get('/sign-in', usersController.signIn )
 router.get('/sign-up', usersController.signUp )
 router.post('/create', usersController.create )
 
-router.post('/create-session',passport.authenticate('local', {failureRedirect:'/users/sign-in'}), usersController.createSession )
 
+
+router.get('/forgot-password',usersController.forgotPassword)
+
+router.post('/reset-password',usersController.resetPassword)
+
+router.get('/reset-password/:accesstoken',usersController.setNewPassword)
+
+router.post('/reset-password/success/:accesstoken',usersController.newPasswordSuccess)
+
+router.post('/create-session',passport.authenticate('local', {failureRedirect:'/users/sign-in'}), usersController.createSession )
 
 //scope is the info we are looking to fetch
 router.get('/auth/google', passport.authenticate('google', {scope:  ['profile', 'email']}))
