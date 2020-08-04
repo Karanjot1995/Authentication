@@ -17,15 +17,13 @@ passport.use(new LocalStrategy({
         // req.flash('error', err)
         return done(err)
       }
-      // if(!user || user.password!= password){
-      //   console.log("error in authentication")
-      //   // req.flash('error', 'Invalid Username/Password')
-      //   return done(null, false)
-      // }
-      if(bcrypt.compareSync(password, user.password)){
+      if(!user || bcrypt.compareSync(password, user.password) == false){
+        req.flash('error', 'Invalid Username/Password')
+        return done(null, false)
+      }
+      else if(bcrypt.compareSync(password, user.password)){
         return done(null,user)
       }
-      return done(null, false)
     })
   }
 ))

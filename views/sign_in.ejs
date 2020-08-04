@@ -1,13 +1,25 @@
+<div class="text-center">
 
-    <h1>Sign In</h1>
-    <form class="signup" action="/users/create-session" method="POST">
-      <input type="email" name="email" placeholder="Email" required/>
-      <input type="password" name="password" placeholder="Password" required/>
-      <input type="submit" value="Sign In"/>
-    </form>
-    <h2 class="text-center"><a href="/users/sign-up">Sign Up</a></h2>
-    
+  <h1>Sign In</h1>
+  <form class="signup" action="/users/create-session" method="POST">
+    <input type="email" name="email" placeholder="Email" required/>
+    <input type="password" name="password" placeholder="Password" required/>
+    <input type="submit" value="Sign In"/>
+  </form>
+  <a href="/users/forgot-password">Forgot password?</a>
 
-    <h3 class="text-center">OR</h3>
+  <h2 class="text-center"><a href="/users/sign-up">Sign Up</a></h2>
+  
 
-    <p class="text-center"><a href="/users/auth/google">Google Sign In/Sign Up</a></p>
+  <h3 class="text-center">OR</h3>
+
+  <div id="gSignInWrapper">
+    <span class="label">Sign in with:</span>
+    <a id="g-login-btn" href="/users/auth/google">
+      <div id="customBtn" class="customGPlusSignIn">
+        <img class="icon" src="/images/google-logo.png" height="40px" width="40px"/>
+        <span class="buttonText">Google</span>
+      </div>
+    </a>
+  </div>
+</div>

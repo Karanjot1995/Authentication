@@ -31,3 +31,32 @@ ul {
 
 .hide {
   display: none; }
+
+#g-login-btn:hover {
+  text-decoration: none; }
+
+#g-login-btn #customBtn {
+  display: flex;
+  background: white;
+  color: #444;
+  align-items: center;
+  width: 190px;
+  margin: auto;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey; }
+
+#g-login-btn #customBtn:hover {
+  cursor: pointer; }
+
+#g-login-btn span.label {
+  font-family: serif;
+  font-weight: normal; }
+
+#g-login-btn span.buttonText {
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  /* Use the Roboto font that is loaded in the <head> */
+  font-family: 'Roboto', sans-serif; }
